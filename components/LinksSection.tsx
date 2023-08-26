@@ -39,8 +39,8 @@ const LinksSection = () => {
             Check out my socials
         </div>
         <div>
-            {links.map(link => (
-                <Link href={link.url} className='flex items-center w-full rounded-xl p-1.5 mb-2 bg-slate-900 group hover:bg-slate-800 transition-shadow duration-75'>
+            {links.map((link,idx) => (
+                <Link href={link.url} key={idx} className='flex items-center w-full rounded-xl p-1.5 mb-2 bg-slate-900 group hover:bg-slate-800 transition-shadow duration-75'>
                     <div className='flex w-full text-center'>
                         <div className='w-10 h-10 sm:w-12 sm:h-12 items-center flex'>
                             <Image src={link.icon}

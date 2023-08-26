@@ -30,8 +30,8 @@ const ExperienceSection = () => {
             Below is my description of my professional experience 
         </div>
         <ul className='list-inside lg:list-outside list-disc text-gray-200'>
-            {experience.map(item => (
-                <li className='mb-10'>
+            {experience.map((item,idx) => (
+                <li className='mb-10' key={idx}>
                     <div className='text-lg font-medium mb-3 text-gray-300'>
                         {item.time_range} <br className='block sm:hidden' /> <span className='text-blue-600 pl-4 sm:pl-0'>
                             {'>>'} {item.company}

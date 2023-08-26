@@ -10,7 +10,7 @@ const TechSection = () => {
         },
         {
             name: 'Typescript',
-            href_img: '/typescript.png',
+            href_img: '/typescript2.svg',
         },
         {
             name: 'React.js',
@@ -64,8 +64,8 @@ const TechSection = () => {
             Tech I use in most of my projects.
         </div>
         <div className='flex flex-wrap'>
-            {technologies.map(tech => (
-                <div className='flex py-1 sm:py-1.5 px-2 sm:px-3 md:px-4 mr-2 mb-2 bg-slate-900 rounded-xl items-center group duration-100'>
+            {technologies.map((tech,idx) => (
+                <div key={idx} className='flex py-1 sm:py-1.5 px-2 sm:px-3 md:px-4 mr-2 mb-2 bg-slate-900 rounded-xl items-center group duration-100'>
                     <Image  
                             className='w-10 h-10 sm:w-12 p-1 sm:h-12 group-hover:-rotate-[20deg] transition-all ease-in-out duration-75'
                             src={tech.href_img}

@@ -30,18 +30,18 @@ const InformationSection = () => {
     ]
   return (
     <div className='mb-12'>
-        <TitleHeader title="Info"/>
+        <TitleHeader title="My JSON"/>
         <div className='text-gray-200 cursor-default'>
-            {information.map(info => (
-                <div>
+            {information.map((info,idx) => (
+                <div key={idx}>
                     <div className='flex flex-row mb-4'>
                         <div className='basis-1/3'>
-                            <p>
+                            <p>'
                                 <span className='text-blue-400'>_</span>{info.label}
-                            </p>
+                            '</p>
                         </div>
                         <div className='basis-2/3'>
-                            <p>{info.value}</p>
+                            <p>: '{info.value}'</p>
                         </div>
                     </div>
                 </div>

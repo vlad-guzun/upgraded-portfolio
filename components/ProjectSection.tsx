@@ -41,8 +41,8 @@ const ProjectSection = () => {
             Some of my projects
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-2'>
-            {projects.map(project => (
-                <div className='bg-slate-900 rounded-xl'>
+            {projects.map((project,idx) => (
+                <div key={idx} className='bg-slate-900 rounded-xl'>
                     <div style={{backgroundImage: `url('${project.thumbnail}')`}} className='bg-no-repeat bg-cover bg-center rounded-tl-xl rounded-tr-xl relative'>
                         <div className='aspect-video bg-gradient-to-b from-transparent to-black'>
                             <div className='absolute bottom-0 left-0'>
