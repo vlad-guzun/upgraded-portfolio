@@ -15,9 +15,9 @@ const TopSection = () => {
             <div>
                 <Image 
                       className='rounded-full'
-                      src={'/logo.gif'}
-                      height={100}
-                      width={100}
+                      src={'/cv_pic.jpg'}
+                      height={150}
+                      width={150}
                       alt='profile_pic'
                 />
             </div>              
