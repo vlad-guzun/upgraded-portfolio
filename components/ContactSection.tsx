@@ -45,7 +45,7 @@ const ContactSection = () => {
                         <Link href={'#'}
                             className='text-slate-500 text-sm tracking-wide font-semibold group-hover:text-slate-400 transition ease-in-out duration-75'
                         >
-                            RO:0746018887 | MD:79830340
+                            RO:0746018887 MD:79830340
                         </Link>
                     </div>
                 </div>

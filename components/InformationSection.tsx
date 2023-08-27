@@ -1,4 +1,4 @@
-import TitleHeader from "./TitleHeader"
+import TitleHeader from "./TitleHeader";
 
 const InformationSection = () => {
     const information = [
@@ -12,11 +12,11 @@ const InformationSection = () => {
         },
         {
             label: 'current_location',
-            value: 'Timisoara,Romania',
+            value: 'Timisoara, Romania',
         },
         {
             label: 'languages',
-            value: 'English,Romanian'
+            value: ['English', 'Romanian'], 
         },
         {
             label: 'experience',
@@ -24,31 +24,35 @@ const InformationSection = () => {
         },
         {
             label: 'status',
-            value: <span className='text-blue-600'>Open to oportunities</span>,
+            value: <span className='text-blue-600'>Open to opportunities</span>,
         },
+    ];
 
-    ]
-  return (
-    <div className='mb-12'>
-        <TitleHeader title="My JSON"/>
-        <div className='text-gray-200 cursor-default'>
-            {information.map((info,idx) => (
-                <div key={idx}>
-                    <div className='flex flex-row mb-4'>
-                        <div className='basis-1/3'>
-                            <p>'
-                                <span className='text-blue-400'>_</span>{info.label}
-                            '</p>
-                        </div>
-                        <div className='basis-2/3'>
-                            <p>: '{info.value}'</p>
+    return (
+        <div className='mb-12'>
+            <TitleHeader title="My JSON"/>
+            <div className='text-gray-200 cursor-default'>
+                {information.map((info, idx) => (
+                    <div key={idx}>
+                        <div className='flex flex-row mb-4'>
+                            <div className='basis-1/3'>
+                                <p>
+                                    <span className='text-blue-400'>_{info.label}</span>:
+                                </p>
+                            </div>
+                            <div className='basis-2/3'>
+                                {Array.isArray(info.value) ? (
+                                    <p>: [<span className='text-gray-200'>'{info.value.join("', '")}'</span>]</p>
+                                ) : (
+                                    <p>: '{info.value}'</p>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default InformationSection
+export default InformationSection;
