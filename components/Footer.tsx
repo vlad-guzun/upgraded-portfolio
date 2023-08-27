@@ -19,8 +19,8 @@ const Footer = () => {
         >
           {/* Add a semi-transparent background for text readability */}
           <div className="bg-black bg-opacity-50 absolute inset-0"></div>
-          <span className="text-white text-xs absolute inset-0 flex items-center justify-center mt-60 ml-20">
-            coded by Vlad Guzun
+          <span className="text-white text-xs absolute inset-0 flex items-center justify-center mt-[302px]  0 ml-20">
+            Coded by Vlad Guzun
           </span>
         </div>
       </div>
