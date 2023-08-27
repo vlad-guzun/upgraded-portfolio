@@ -20,7 +20,7 @@ const InformationSection = () => {
         },
         {
             label: 'experience',
-            value: '1 year',
+            value: 'IBM summer Internship',
         },
         {
             label: 'status',
