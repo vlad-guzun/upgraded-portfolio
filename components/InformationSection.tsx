@@ -37,7 +37,7 @@ const InformationSection = () => {
                         <div className='flex flex-row mb-4'>
                             <div className='basis-1/3'>
                                 <p>
-                                    <span className='text-blue-400'>_{info.label}</span>:
+                                    <span className='text-blue-400'>_{info.label}</span>
                                 </p>
                             </div>
                             <div className='basis-2/3'>
