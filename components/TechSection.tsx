@@ -2,8 +2,23 @@ import TitleHeader from "./TitleHeader"
 import Image from "next/image"
 
 const TechSection = () => {
-    {/*CHANGE ALL HERE , ADD A MAP, DOWNLOAD ALL THE ICONS, I DO NOT KNOW WHY THE FUCK DOESNT WORK WITH THE NEXT.CONFIG*/}
     const technologies = [
+        {
+            name: 'HTML',
+            href_img: '/html.png',
+        },
+        {
+            name: 'CSS',
+            href_img: '/css.png',
+        },
+        {
+            name: 'Tailwind',
+            href_img: '/tailwind.png',
+        },
+        {
+            name: 'SCSS',
+            href_img: '/scss.png',
+        },
         {
             name: 'Javascript',
             href_img: '/javascript.png',
@@ -17,8 +32,16 @@ const TechSection = () => {
             href_img: '/react.webp',
         },
         {
+            name: 'React Native',
+            href_img: '/react.webp',
+        },
+        {
             name: 'Next.js',
             href_img: '/nextjs.png',
+        },
+        {
+            name: 'Angular',
+            href_img: '/angular.png',
         },
         {
             name: 'Node.js',
@@ -35,6 +58,10 @@ const TechSection = () => {
         {
             name: 'GraphQL',
             href_img: '/graphql.png',
+        },
+        {
+            name: 'Prisma',
+            href_img: '/prisma.png',
         },
         {
             name: 'GIT',
@@ -55,6 +82,10 @@ const TechSection = () => {
         {
             name: 'Powershell',
             href_img: '/powershell.png',
+        },
+        {
+            name: 'Cloud',
+            href_img: '/cloud.png',
         },
     ]
   return (
@@ -77,6 +108,7 @@ const TechSection = () => {
                 </div>
             ))}
         </div>
+        <h1>Willing to learn <span className='text-blue-500'>anything required</span> by the job very fast and be productive <span className='text-blue-500'>within days</span>.</h1>
     </div>
   )
 }
