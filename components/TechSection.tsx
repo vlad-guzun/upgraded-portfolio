@@ -28,6 +28,10 @@ const TechSection = () => {
             href_img: '/typescript2.svg',
         },
         {
+            name: 'C++',
+            href_img: '/c++.png',
+        },
+        {
             name: 'React.js',
             href_img: '/react.webp',
         },
