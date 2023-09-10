@@ -87,10 +87,6 @@ const TechSection = () => {
             name: 'Powershell',
             href_img: '/powershell.png',
         },
-        {
-            name: 'Cloud',
-            href_img: '/cloud.png',
-        },
     ]
   return (
     <div>
