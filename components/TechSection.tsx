@@ -28,8 +28,8 @@ const TechSection = () => {
             href_img: '/typescript2.svg',
         },
         {
-            name: 'C++',
-            href_img: '/c++.png',
+            name: 'AWS',
+            href_img: '/aws3.png',
         },
         {
             name: 'React.js',
