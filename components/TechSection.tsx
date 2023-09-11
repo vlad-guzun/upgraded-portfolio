@@ -28,7 +28,7 @@ const TechSection = () => {
             href_img: '/typescript2.svg',
         },
         {
-            name: 'AWS',
+            name: 'EC2/S3/Amplify/Lambda',
             href_img: '/aws3.png',
         },
         {
@@ -42,10 +42,6 @@ const TechSection = () => {
         {
             name: 'Next.js',
             href_img: '/nextjs.png',
-        },
-        {
-            name: 'Angular',
-            href_img: '/angular.png',
         },
         {
             name: 'Node.js',
@@ -76,15 +72,11 @@ const TechSection = () => {
             href_img: '/github.png',
         },
         {
-            name: 'Windows',
-            href_img: '/windows7.png'
-        },
-        {
             name: 'Linux',
-            href_img: '/linux.png',
+            href_img: '/bash.png',
         },
         {
-            name: 'Powershell',
+            name: 'Windows',
             href_img: '/powershell.png',
         },
     ]

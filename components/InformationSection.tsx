@@ -1,58 +1,49 @@
-import TitleHeader from "./TitleHeader";
+import TitleHeader from "./TitleHeader"
+import React from "react"
 
 const InformationSection = () => {
-    const information = [
-        {
-            label: 'name',
-            value: 'Vlad Guzun',
-        },
-        {
-            label: 'birthday',
-            value: '7 March 2002',
-        },
-        {
-            label: 'current_location',
-            value: 'Timisoara, Romania',
-        },
-        {
-            label: 'languages',
-            value: ['English', 'Romanian'], 
-        },
-        {
-            label: 'experience',
-            value: '3 months IBM Internship',
-        },
-        {
-            label: 'status',
-            value: <span className='text-blue-600'>Open to opportunities</span>,
-        },
-    ];
+  const information = {
+    name: 'Vlad Guzun',
+    birthday: '7 March 2002',
+    current_location: 'Timisoara, Romania',
+    languages: ['English', 'Romanian'],
+    experience: '2 months IBM Internship',
+    status: 'Open to opportunities',
+  };
 
-    return (
-        <div className='mb-12'>
-            <TitleHeader title="My JSON"/>
-            <div className='text-gray-200 cursor-default'>
-                {information.map((info, idx) => (
-                    <div key={idx}>
-                        <div className='flex flex-row mb-4'>
-                            <div className='basis-1/3'>
-                                <p>
-                                    <span className='text-blue-400'>_{info.label}</span>
-                                </p>
-                            </div>
-                            <div className='basis-2/3'>
-                                {Array.isArray(info.value) ? (
-                                    <p>: [<span className='text-gray-200'>'{info.value.join("', '")}'</span>]</p>
-                                ) : (
-                                    <p>: '{info.value}'</p>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-};
+  const postmanBlue = '#9cdcfe'
+  const postmanOrange = '#ce9178'
+  const white = '#FFFFFF'
 
-export default InformationSection;
+  const formattedJson = (
+    <pre>
+      {'{\n'}
+      {Object.entries(information).map(([key, value], index, array) => (
+        <React.Fragment key={key}>
+          <span style={{ color: postmanBlue }}>{`  "${key}": `}</span>
+          {key === 'languages' ? (
+            <span>
+              <span style={{ color: white }}>[</span>
+              <span style={{ color: postmanOrange }}>{value.map(v => `"${v}"`).join(', ')}</span>
+              <span style={{ color: white }}>]</span>
+            </span>
+          ) : (
+            <span style={{ color: postmanOrange }}>{typeof value === 'string' ? `"${value}"` : JSON.stringify(value)}</span>
+          )}
+          {index < array.length - 1 ? ',' : ''}
+          <br />
+        </React.Fragment>
+      ))}
+      {'}'}
+    </pre>
+  );
+
+  return (
+    <div className='mb-12'>
+      <TitleHeader title="Abstract Info"/>
+      {formattedJson}
+    </div>
+  )
+}
+
+export default InformationSection

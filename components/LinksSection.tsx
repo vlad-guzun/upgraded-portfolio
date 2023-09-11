@@ -25,11 +25,6 @@ const LinksSection = () => {
             icon: '/instagram.webp',
             label: 'Instagram',
         },
-        {
-            url: 'https://www.threads.net/@vladguzun_',
-            icon: '/threads2.png',
-            label: 'Threads',
-        }
     ]
 
   return (
