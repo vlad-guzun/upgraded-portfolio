@@ -1,5 +1,5 @@
-import TitleHeader from "./TitleHeader"
 import React from "react"
+import TitleHeader from "./TitleHeader"
 
 const InformationSection = () => {
   const information = {
@@ -24,7 +24,11 @@ const InformationSection = () => {
           {key === 'languages' ? (
             <span>
               <span style={{ color: white }}>[</span>
-              <span style={{ color: postmanOrange }}>{value.map(v => `"${v}"`).join(', ')}</span>
+              {Array.isArray(value) ? (
+                <span style={{ color: postmanOrange }}>{value.map(v => `"${v}"`).join(', ')}</span>
+              ) : (
+                <span style={{ color: postmanOrange }}>{`"${value}"`}</span>
+              )}
               <span style={{ color: white }}>]</span>
             </span>
           ) : key === 'current_location' ? (
@@ -49,10 +53,6 @@ const InformationSection = () => {
       {'}'}
     </pre>
   );
-  
-  
-  
-  
 
   return (
     <div className='mb-12'>
