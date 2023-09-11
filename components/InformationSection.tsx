@@ -3,9 +3,9 @@ import React from "react"
 
 const InformationSection = () => {
   const information = {
-    name: 'Vlad Guzun',
+    full_name: 'Vlad Guzun',
     birthday: '7 March 2002',
-    current_location: 'Timisoara, Romania',
+    current_location: 'Timisoara',
     languages: ['English', 'Romanian'],
     experience: '2 months IBM Internship',
     status: 'Open to opportunities',
@@ -27,6 +27,18 @@ const InformationSection = () => {
               <span style={{ color: postmanOrange }}>{value.map(v => `"${v}"`).join(', ')}</span>
               <span style={{ color: white }}>]</span>
             </span>
+          ) : key === 'current_location' ? (
+            <span style={{ color: postmanOrange }}>
+              {' '}
+              <span style={{ color: white }}>{'{\n'}</span>
+              <span style={{ color: postmanBlue }}>{'    "country": '}</span>
+              <span style={{ color: postmanOrange }}>"Romania",</span>
+              <br />
+              <span style={{ color: postmanBlue }}>{'    "city": '}</span>
+              <span style={{ color: postmanOrange }}>{`"${value}"`}</span>
+              <br />
+              <span style={{ color: white }}>{'  }'}</span>
+            </span>
           ) : (
             <span style={{ color: postmanOrange }}>{typeof value === 'string' ? `"${value}"` : JSON.stringify(value)}</span>
           )}
@@ -37,10 +49,14 @@ const InformationSection = () => {
       {'}'}
     </pre>
   );
+  
+  
+  
+  
 
   return (
     <div className='mb-12'>
-      <TitleHeader title="Abstract Info"/>
+      <TitleHeader title="JSON Info"/>
       {formattedJson}
     </div>
   )
