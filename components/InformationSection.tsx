@@ -8,8 +8,9 @@ interface Information {
     month: string
     day: number
   };
-  current_location: {
-    country: string
+  location: {
+    home_country: string
+    currently_living: string
     city: string
   };
   languages: string[]
@@ -30,8 +31,9 @@ const InformationSection = () => {
       month: 'March',
       day: 7,
     },
-    current_location: {
-      country: 'Romania',
+    location: {
+      home_country: 'Moldova', // Add 'home_country' field
+      currently_living: 'Romania', // Add 'currently_living' field
       city: 'Timisoara',
     },
     languages: ['English', 'Romanian'],
@@ -43,7 +45,7 @@ const InformationSection = () => {
     status: 'Open to work',
     core_value: "The only way to do great work is to love what you do.",
   };
-
+  
   const postmanBlue = '#9cdcfe';
   const postmanOrange = '#ce9178';
   const white = '#FFFFFF';
@@ -96,13 +98,15 @@ const InformationSection = () => {
               <br />
               <span style={{ color: white }}>{'  }'}</span>
             </span>
-          ) : key === 'current_location' ? (
+          ) : key === 'location' ? (
             <span style={{ color: postmanOrange }}>
               {' '}
               <span style={{ color: white }}>{'{\n'}</span>
-              <span style={{ color: postmanBlue }}>{'    "country": '}</span>
-              <span style={{ color: postmanOrange }}>"{value.country}"</span>
-              <span style={{ color: white }}>,</span> 
+              <span style={{ color: postmanBlue }}>{'    "home_country": '}</span>
+              <span style={{ color: postmanOrange }}>"{value.home_country}",</span>
+              <br />
+              <span style={{ color: postmanBlue }}>{'    "currently_living": '}</span>
+              <span style={{ color: postmanOrange }}>"{value.currently_living}",</span>
               <br />
               <span style={{ color: postmanBlue }}>{'    "city": '}</span>
               <span style={{ color: postmanOrange }}>"{value.city}"</span>
@@ -119,6 +123,7 @@ const InformationSection = () => {
       {'}'}
     </pre>
   );
+  
 
   return (
     <div className='mb-12'>
