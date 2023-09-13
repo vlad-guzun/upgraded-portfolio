@@ -56,8 +56,8 @@ const TechSection = () => {
             href_img: '/postgresql.png',
         },
         {
-            name: 'GraphQL',
-            href_img: '/graphql.png',
+            name: 'Wordpress',
+            href_img: '/wordpress.png',
         },
         {
             name: 'Prisma',
