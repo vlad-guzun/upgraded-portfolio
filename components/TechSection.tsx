@@ -28,6 +28,10 @@ const TechSection = () => {
             href_img: '/typescript2.svg',
         },
         {
+            name: 'C++',
+            href_img: '/c++.png',
+        },
+        {
             name: 'EC2/S3/Amplify/Lambda',
             href_img: '/aws3.png',
         },
