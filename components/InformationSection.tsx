@@ -36,7 +36,7 @@ const InformationSection = () => {
       currently_living: 'Romania', // Add 'currently_living' field
       city: 'Timisoara',
     },
-    languages: ['English', 'Romanian'],
+    languages: ['English', 'Romanian','Russian'],
     experience: {
       type: 'Internship',
       duration: '2 months',
