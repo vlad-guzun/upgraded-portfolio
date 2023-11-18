@@ -7,7 +7,7 @@ const ContactSection = () => {
     <div className='mb-12'>
         <TitleHeader title='Contact'/>
         <div className='text-base mb-4 text-gray-200'>
-            Job offers? Collaborations? , write or call.
+            Job offers?, write or call.
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
             <div className='py-4 pl-4 rounded-xl bg-slate-900 group'>
