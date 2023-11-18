@@ -1,26 +1,26 @@
-import React from "react"
-import TitleHeader from "./TitleHeader"
+import React from "react";
+import TitleHeader from "./TitleHeader";
 
 interface Information {
-  full_name: string
+  full_name: string;
   birthday: {
-    year: number
-    month: string
-    day: number
+    year: number;
+    month: string;
+    day: number;
   };
   location: {
-    home_country: string
-    currently_living: string
-    city: string
+    home_country: string;
+    currently_living: string;
+    city: string;
   };
-  languages: string[]
+  languages: string[];
   experience: {
-    type: string
-    duration: string
-    company: string
+    type: string;
+    duration: string;
+    company: string;
   };
-  status: string
-  core_value: string
+  status: string;
+  core_value: string;
 }
 
 const InformationSection = () => {
@@ -32,18 +32,18 @@ const InformationSection = () => {
       day: 7,
     },
     location: {
-      home_country: 'Moldova', // Add 'home_country' field
-      currently_living: 'Romania', // Add 'currently_living' field
+      home_country: 'Moldova', 
+      currently_living: 'Romania', 
       city: 'Timisoara',
     },
-    languages: ['English', 'Romanian','Russian'],
+    languages: ['English', 'Russian','Romanian'],     
     experience: {
       type: 'Internship',
       duration: '2 months',
       company: 'IBM',
     },
     status: 'Open to work',
-    core_value: "The only way to do great work is to love what you do.",
+    core_value: "The only way to do great work\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tis to love what you do.",
   };
   
   const postmanBlue = '#9cdcfe';
@@ -53,77 +53,55 @@ const InformationSection = () => {
   const formattedJson = (
     <pre>
       {'{\n'}
-      {Object.entries(information).map(([key, value], index, array) => (
-        <React.Fragment key={key}>
-          <span style={{ color: postmanBlue }}>{`  "${key}": `}</span>
-          {key === 'languages' ? (
-            <span>
-              <span style={{ color: white }}>[</span>
-              {Array.isArray(value) ? (
-                <span style={{ color: postmanOrange }}>{value.map((v) => `"${v}"`).join(', ')}</span>
-              ) : (
-                <span style={{ color: postmanOrange }}>{`"${value}"`}</span>
-              )}
-              <span style={{ color: white }}>]</span>
-            </span>
-          ) : key === 'birthday' ? (
-            <span style={{ color: postmanOrange }}>
-              {' '}
-              <span style={{ color: white }}>{'{\n'}</span>
-              <span style={{ color: postmanBlue }}>{'    "year": '}</span>
-              <span style={{ color: '#b5cea8' }}>{value.year}</span>
-              <span style={{ color: white }}>,</span> 
-              <br />
-              <span style={{ color: postmanBlue }}>{'    "month": '}</span>
-              <span style={{ color: postmanOrange }}>{`"${value.month}"`}</span>
-              <span style={{ color: white }}>,</span> 
-              <br />
-              <span style={{ color: postmanBlue }}>{'    "day": '}</span>
-              <span style={{ color: '#b5cea8' }}>{value.day}</span>
-              <br />
-              <span style={{ color: white }}>{'  }'}</span>
-            </span>
-          ) : key === 'experience' ? (
-            <span style={{ color: postmanOrange }}>
-              {' '}
-              <span style={{ color: white }}>{'{\n'}</span>
-              <span style={{ color: postmanBlue }}>{'    "type": '}</span>
-              <span style={{ color: postmanOrange }}>"{value.type}",</span>
-              <br />
-              <span style={{ color: postmanBlue }}>{'    "duration": '}</span>
-              <span style={{ color: postmanOrange }}>{`"${value.duration}",`}</span> 
-              <br />
-              <span style={{ color: postmanBlue }}>{'    "company": '}</span>
-              <span style={{ color: postmanOrange }}>"{value.company}"</span>
-              <br />
-              <span style={{ color: white }}>{'  }'}</span>
-            </span>
-          ) : key === 'location' ? (
-            <span style={{ color: postmanOrange }}>
-              {' '}
-              <span style={{ color: white }}>{'{\n'}</span>
-              <span style={{ color: postmanBlue }}>{'    "home_country": '}</span>
-              <span style={{ color: postmanOrange }}>"{value.home_country}",</span>
-              <br />
-              <span style={{ color: postmanBlue }}>{'    "currently_living": '}</span>
-              <span style={{ color: postmanOrange }}>"{value.currently_living}",</span>
-              <br />
-              <span style={{ color: postmanBlue }}>{'    "city": '}</span>
-              <span style={{ color: postmanOrange }}>"{value.city}"</span>
-              <br />
-              <span style={{ color: white }}>{'  }'}</span>
-            </span>
-          ) : (
-            <span style={{ color: postmanOrange }}>{typeof value === 'string' ? `"${value}"` : JSON.stringify(value)}</span>
-          )}
-          {index < array.length - 1 ? ',' : ''}
-          <br />
-        </React.Fragment>
-      ))}
-      {'}'}
+      <span style={{ color: postmanBlue }}>{`  "full_name": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.full_name}",\n`}</span>
+
+      <span style={{ color: postmanBlue }}>{`  "birthday": `}</span>
+      {'{\n'}
+      <span style={{ color: postmanBlue }}>{`    "year": `}</span>
+      <span style={{ color: '#b5cea8' }}>{`${information.birthday.year},\n`}</span>
+      <span style={{ color: postmanBlue }}>{`    "month": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.birthday.month}",\n`}</span>
+      <span style={{ color: postmanBlue }}>{`    "day": `}</span>
+      <span style={{ color: '#b5cea8' }}>{`${information.birthday.day}\n`}</span>
+      <span style={{ color: white }}>{`  },\n`}</span>
+
+      <span style={{ color: postmanBlue }}>{`  "location": `}</span>
+      {'{\n'}
+      <span style={{ color: postmanBlue }}>{`    "home_country": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.location.home_country}",\n`}</span>
+      <span style={{ color: postmanBlue }}>{`    "currently_living": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.location.currently_living}",\n`}</span>
+      <span style={{ color: postmanBlue }}>{`    "city": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.location.city}"\n`}</span>
+      <span style={{ color: white }}>{`  },\n`}</span>
+
+      <span style={{ color: postmanBlue }}>{`  "languages":  `}</span>
+      {'[\n'}
+      <span style={{ color: postmanOrange }}>{`    "${information.languages[0]}",\n`}</span>
+      <span style={{ color: postmanOrange }}>{`    "${information.languages[1]}",\n`}</span>
+      <span style={{ color: postmanOrange }}>{`    "${information.languages[2]}"\n`}</span>
+      <span style={{ color: white }}>{`  ],\n`}</span>
+
+      <span style={{ color: postmanBlue }}>{`  "experience": `}</span>
+      {'{\n'}
+      <span style={{ color: postmanBlue }}>{`    "type": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.experience.type}",\n`}</span>
+      <span style={{ color: postmanBlue }}>{`    "duration": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.experience.duration}",\n`}</span>
+      <span style={{ color: postmanBlue }}>{`    "company": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.experience.company}"\n`}</span>
+      <span style={{ color: white }}>{`  },\n`}</span>
+
+      <span style={{ color: postmanBlue }}>{`  "status": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.status}",\n`}</span>
+
+      <span style={{ color: postmanBlue }}>{`  "core_value": `}</span>
+      <span style={{ color: postmanOrange }}>{`"${information.core_value.replace(/\t/g, ' ')}"\n`}</span>
+
+      {'}\n'}
     </pre>
   );
-  
 
   return (
     <div className='mb-12'>
