@@ -43,7 +43,7 @@ const InformationSection = () => {
       company: 'IBM',
     },
     status: 'Open to work',
-    core_value: "The only way to do great work\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tis to love what you do.",
+    core_value: "The only way to do\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t great work is to love\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t what you do.",
   };
   
   const postmanBlue = '#9cdcfe';
